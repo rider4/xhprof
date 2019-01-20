@@ -1,0 +1,16 @@
+{
+    "name": "rider4/xhprof",
+    "description": "xhprof for php>=7",
+    "type": "library",
+    "require": {
+        "php": ">=7.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rider4",
+            "email": "eagotovo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
