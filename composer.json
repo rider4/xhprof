@@ -12,5 +12,13 @@
             "email": "eagotovo@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-0": {
+            "": [
+                "xhprof_lib/",
+                "helpers"
+            ]
+        }
+    },
     "minimum-stability": "dev"
 }
