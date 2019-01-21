@@ -24,13 +24,13 @@ class XHPROF_Helper
     ): string {
         $xhprof_data = xhprof_disable();
 
-        require_once(dirname(__FILE__).'/../vendor/autoload.php');
+//        require_once(dirname(__FILE__).'/../vendor/autoload.php');
 
-//        $XHPROF_ROOT = realpath(
-//            dirname(__FILE__).'/vendor/rider4/xhprof/xhprof_lib'
-//        );
-//        include_once $XHPROF_ROOT."/utils/xhprof_lib.php";
-//        include_once $XHPROF_ROOT."/utils/xhprof_runs.php";
+        $XHPROF_ROOT = realpath(
+            dirname(__FILE__).'/../vendor/rider4/xhprof/xhprof_lib'
+        );
+        include_once $XHPROF_ROOT."/utils/xhprof_lib.php";
+        include_once $XHPROF_ROOT."/utils/xhprof_runs.php";
 
         $namespace   = sprintf(
             '%s_%s',
