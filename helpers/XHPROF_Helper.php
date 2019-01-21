@@ -24,27 +24,28 @@ class XHPROF_Helper
     ): string {
         $xhprof_data = xhprof_disable();
 
-//        require_once(dirname(__FILE__).'/../vendor/autoload.php');
-
         $XHPROF_ROOT = realpath(
-            dirname(__FILE__).'/../vendor/rider4/xhprof/xhprof_lib'
+            dirname(__FILE__).'/../xhprof_lib'
         );
         include_once $XHPROF_ROOT."/utils/xhprof_lib.php";
         include_once $XHPROF_ROOT."/utils/xhprof_runs.php";
 
-        $namespace   = sprintf(
+        $namespace  = str_replace('.', '_', $namespace);
+        $nameOfTest = str_replace('.', '_', $nameOfTest);
+
+        $linkName    = sprintf(
             '%s_%s',
             $namespace,
             $nameOfTest
         );
         $xhprof_runs = new \XHProfRuns_Default();
-        $run_id      = $xhprof_runs->save_run($xhprof_data, $namespace);
+        $run_id      = $xhprof_runs->save_run($xhprof_data, $linkName);
 
         return sprintf(
             'http://%s/index.php?run=%s&source=%s',
+            $host,
             $run_id,
-            $namespace,
-            $host
+            $linkName
         );
     }
 }
